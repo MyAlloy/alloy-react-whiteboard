@@ -5,12 +5,25 @@
 // Colors: b: rgba(48, 87, 224, 0.5), r: rgba(235, 59, 59, 0.5), g: rgba(109, 235, 57, 0.5)
 
 .section {
+  display: flex;
+
   .blue {
+    background-color: rgba(48, 87, 224, 0.5);
+    height: 200px;
+    width: 200px;
   }
 
   .red {
+    background-color: rgba(235, 59, 59, 0.5);
+    height: 200px;
+    width: 200px;
+
   }
 
   .green {
+    background-color: rgba(109, 235, 57, 0.5);
+    height: 200px;
+    width: 200px;
+
   }
 }

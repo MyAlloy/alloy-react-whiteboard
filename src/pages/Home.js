@@ -14,22 +14,45 @@ import { useState } from 'react';
 // Center the two columns in the center of the page
 
 export default function Home() {
-  const onBlue = () => {};
+  const [red, setRed] = useState(false);
+  const [blue, setBlue] = useState(false);
+  const [green, setGreen] = useState(false);
 
-  const onRed = () => {};
+  const handleClick = (colorClicked) => {
+    if(colorClicked === 'green') {
+      console.log('green clicked');
+    }
+    switch (colorClicked) {
+      case 'red' :
+        setRed('red')
+        break;
+      case 'blue' :
+        setBlue('blue')
+        break;
+      case 'green' :
+        setGreen('green')
+        break;
+        default: console.log ('nada')
+    }
+  }
 
-  const onGreen = () => {};
+  const onBlue = () => handleClick('blue')
+
+  const onRed = () => handleClick('red')
+
+  const onGreen = () => handleClick('green')
 
   return (
     <section className='section'>
-      <div className='blue' onClick={onBlue}>
-        /*text goes here*/
+      <div className='redAndBlue'>
+        <div className='blue' onClick={onBlue}>
+        </div>
+        <div className='red' onClick={onRed}>
+        {red && <p>"Red" </p>}
       </div>
-      <div className='red' onClick={onRed}>
-        /*text goes here*/
       </div>
       <div className='green' onClick={onGreen}>
-        /*text goes here*/
+        {blue && <p>"Clicked" </p>}
       </div>
     </section>
   );
